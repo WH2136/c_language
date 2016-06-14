@@ -1,2 +1,2 @@
 # c_language
-this dir include sone c code
+this dir include some c code
