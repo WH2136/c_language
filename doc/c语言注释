@@ -1,0 +1,38 @@
+<First> c语言中添加注释的方法
+1. 单行注释
+  //注释内容
+  
+2. 多行注释
+ /*
+  *  注释内容
+  */
+  
+3. 可调试的注释
+  #if 0
+      用于调试的代码部分
+  #endif
+  我把这个详细解释一下哈，如果#if后面跟的是0，那么‘用于调试的代码部分’在程序预编译的时候
+  自动忽略掉，如果后面跟的是1，那么中间的代码部分，将不会在预编译的时候被忽略掉，而是作为
+  正常代码的一部分
+  
+<Second> linux内核c语言注释的规范
+1. c文件的开头部分的注释，应该说明文件的 版权说明，版本号，生成日期，作者等
+   例如在内核源文件arch/mips/kernel/irq.c中开头部分的一段注释
+    /*
+     * This file is subject to the terms and conditions of the GNU General Public
+     * License.  See the file "COPYING" in the main directory of this archive
+     * for more details.
+     *
+     * Code to handle x86 style IRQs plus some generic interrupt stuff.
+     *
+     * Copyright (C) 1992 Linus Torvalds
+     * Copyright (C) 1994 - 2000 Ralf Baechle
+     */
+2. 对函数的注释，一定要写函数有什么功能或者要做什么，千万不能解释代码的意思
+    例如在内核源文件arch/mips/kernel/irq.c对函数do_IRQ（）的注释
+    /*
+     * do_IRQ handles all normal device IRQ's (the special
+     * SMP cross-CPU interrupts have their own specific
+     * handlers).
+     */
+    void __irq_entry do_IRQ(unsigned int irq) { ... }
