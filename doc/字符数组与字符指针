@@ -1,0 +1,37 @@
+1、表示形式
+   a、字符数组：char str[] = "abcde"/ {"abcde"};
+                char str[] = {'a','b','c','d','e'};
+                这两种表示方式都可以，但是前者的长度比后者的要大一，因为字符串常量默认在结尾加'\0'.
+   b、字符指针: char *str = "hello".
+
+2、初始化
+   a、对字符指针变量赋初值
+      char *a = "I love china";
+    等价于
+      char *a;
+      a = "I love china";
+   b、对字符数组赋初值
+      char str[14] = "I love china";
+    对于字符数组，不等价于以下方式
+      char str[14];
+      str = "I love china";
+    对字符数组，只能对各个元素赋值，不能用以上方式赋值
+
+3、如果定义了一个字符数组，那么它有确定的内存地址；而定义一个字符指针变量时，它并未指向某个确定的字符数据，
+   并且可以多次赋值。
+   
+4、字符串处理函数
+   a、#include <string.h>
+      char *strcpy(char *dest, const char *src);
+      char *strncpy(char *dest, const char *src, size_t n);
+      功能：复制字符串src中的字符到字符串dest，"包括空值结束符",返回值为指针dest。
+   b、#include <string.h>
+      char *strcat(char *dest, const char *src);
+      char *strncat(char *dest, const char *src, size_t n);
+      功能：函数将字符串str2 连接到str1的末端，并返回指针str1，连接时将字符串1后面的'\0'去掉，只在新串最后保留一个'\0'.
+  注：1、“字符数组1”必须写成数组名形式，“字符串2"可以是字符数组名，也可以是一个字符串常量
+      2、复制时连同字符串后面的 ' \0 ' 一起复制到数组1中
+      3、不能用赋值语句直接将一个字符串常量或者字符数组直接赋给一个字符数组（同普通变量数组是一样的），而只能用strcpy函数处理。
+      4、可以用strcpy函数将字符串2中的前若干个字符复制到字符数组1中去。
+      
+    ref:http://www.jb51.net/article/37456.htm
