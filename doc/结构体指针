@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+struct student {
+    char *name;
+    struct student *next;
+}
+
+int main(void) {
+    struct student *head;
+    
+    struct student *node = (struct student *)malloc(sizeof(struct student));
+    node->name = "test";
+    node->next=NULL;
+    head->next = node; 
+    /*
+     * 这样是错误的，因为head仅仅是一个指针
+     * 正确的写法如下
+     */
+    head = (struct student *)malloc(sizeof(struct student));
+    head->next = node;    
+    
+    return 0;
+}
+
+
+总结上面的代码，结构体仅仅是一个指针，如果要使用结构体中的next，结构体指针必须指向
+一个实际的结构体变量。
+       head
+      /                  
+ ____/              ____
+|____|  next---->  |____| next---->NULL;
+|____|             |____|
