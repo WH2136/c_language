@@ -1,3 +1,6 @@
+/*
+ * 输入5个国家名字，按字母顺序(ascii码值从小到大)输出
+ */
 #include <stdio.h>
 
 #define NUM 5
