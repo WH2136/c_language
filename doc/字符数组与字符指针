@@ -33,5 +33,8 @@
       2、复制时连同字符串后面的 ' \0 ' 一起复制到数组1中
       3、不能用赋值语句直接将一个字符串常量或者字符数组直接赋给一个字符数组（同普通变量数组是一样的），而只能用strcpy函数处理。
       4、可以用strcpy函数将字符串2中的前若干个字符复制到字符数组1中去。
+5、求字符串的长度
+   strlen ---- calculate the length of string
+   sizeof ---- measured in the number of char size storage units required for the type. 
       
     ref:http://www.jb51.net/article/37456.htm
